@@ -3,8 +3,11 @@ package baseball;
 import java.io.Console;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Application {
+
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static ArrayList<Integer> comGenNum() {
         Random random = new Random();
@@ -25,11 +28,13 @@ public class Application {
     }
 
     public static ArrayList<Integer> manGenNum() throws IllegalArgumentException {
-        Console console = System.console();
-        String num = console.readLine("숫자를 입력해주세요 : ");
+        String num;
         try {
+            System.out.print("숫자를 입력해주세요 : ");
+            num = scanner.nextLine();
             validCheck(num);
         } catch (IllegalArgumentException e) {
+            System.out.println(e);
             throw e;
         }
 
@@ -67,8 +72,7 @@ public class Application {
     public static boolean exit() {
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
         System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-        Console console = System.console();
-        int option = Integer.parseInt(console.readLine());
+        int option = Integer.parseInt(scanner.nextLine());
 
         if (option == 2) {
             return true;
