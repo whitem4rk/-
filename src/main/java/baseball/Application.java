@@ -9,10 +9,8 @@ public class Application {
     public static ArrayList<Integer> comGenNum() {
         Random random = new Random();
         ArrayList<Integer> numList = new ArrayList<Integer>();
-        // depth 1
         while (numList.size() != 3) {
             int randomNum = random.nextInt(9) + 1;
-            // depth 2
             if (!numList.contains(randomNum))
                 numList.add(randomNum);
         }
@@ -20,9 +18,10 @@ public class Application {
     }
 
     public static void validCheck(String num) throws IllegalArgumentException{
-
-
-        throw new IllegalArgumentException();
+        for (int i = 0; i < num.length(); i++) {
+            if (!Character.isDigit(num.charAt(i)) || num.charAt(i) == '0')
+                throw new IllegalArgumentException();
+        }
     }
 
     public static int manGenNum() throws IllegalArgumentException {
