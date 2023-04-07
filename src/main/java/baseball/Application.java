@@ -79,5 +79,18 @@ public class Application {
 
 
     public static void main(String[] args) {
+        while (true) {
+            ArrayList<Integer> comNum = comGenNum();
+            ArrayList<Integer> manNum;
+            try {
+                manNum = manGenNum();
+            } catch (IllegalArgumentException e) {
+                break;
+            }
+            int correct = judge(comNum, manNum);
+            if (correct == 3 && exit()) {
+                break;
+            }
+        }
     }
 }
