@@ -39,8 +39,8 @@ public class Application {
         }
 
         ArrayList<Integer> arrNum = new ArrayList<Integer>();
-        for (int i = 0; i < 2; i++)
-            arrNum.add(new Integer(num.charAt(i)));
+        for (int i = 0; i < 3; i++)
+            arrNum.add(Integer.parseInt(String.valueOf(num.charAt(i))));
 
         return arrNum;
     }
@@ -83,8 +83,8 @@ public class Application {
 
 
     public static void main(String[] args) {
+        ArrayList<Integer> comNum = comGenNum();
         while (true) {
-            ArrayList<Integer> comNum = comGenNum();
             ArrayList<Integer> manNum;
             try {
                 manNum = manGenNum();
@@ -94,6 +94,8 @@ public class Application {
             int correct = judge(comNum, manNum);
             if (correct == 3 && exit()) {
                 break;
+            } else if (correct == 3) {
+                comNum = comGenNum();
             }
         }
     }
