@@ -8,10 +8,10 @@ public class Computer {
 
     private static List<Integer> balls = new ArrayList<>();
 
-    private static final Random random = new Random();
-    private static final int MAX_NUMBER = 9;
-    private static final int MIN_NUMBER = 1;
-    private static final int LENGTH = 3;
+    static final Random random = new Random();
+    static final int MAX_NUMBER = 9;
+    static final int MIN_NUMBER = 1;
+    static final int LENGTH = 3;
 
 
     public static List<Integer> getBalls() {
