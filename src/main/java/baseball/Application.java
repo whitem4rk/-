@@ -24,7 +24,7 @@ public class Application {
         }
     }
 
-    public static int manGenNum() throws IllegalArgumentException {
+    public static ArrayList<Integer> manGenNum() throws IllegalArgumentException {
         Console console = System.console();
         String num = console.readLine("숫자를 입력해주세요 : ");
         try {
@@ -33,7 +33,11 @@ public class Application {
             throw e;
         }
 
-        return Integer.parseInt(num);
+        ArrayList<Integer> arrNum = new ArrayList<Integer>();
+        for (int i = 0; i < 2; i++)
+            arrNum.add(new Integer(num.charAt(i)));
+
+        return arrNum;
     }
 
 
