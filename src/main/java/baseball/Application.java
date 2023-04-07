@@ -64,6 +64,20 @@ public class Application {
         return strike;
     }
 
+    public static boolean exit() {
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        Console console = System.console();
+        int option = Integer.parseInt(console.readLine());
+
+        if (option == 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
     public static void main(String[] args) {
     }
 }
