@@ -6,8 +6,8 @@ import java.util.List;
 public class Player {
     private static List<Integer> balls;
 
-    static final int MAX_NUM = 9;
-    static final int MIN_NUM = 1;
+    static final int MAX_NUMBER = 9;
+    static final int MIN_NUMBER = 1;
     static final int LENGTH = 3;
 
     public static void setBalls(ArrayList<Integer> balls) {
