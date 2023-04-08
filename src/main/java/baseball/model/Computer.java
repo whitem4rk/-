@@ -8,20 +8,15 @@ public class Computer {
 
     private static List<Integer> balls = new ArrayList<>();
 
-    static final Random random = new Random();
-    static final int MAX_NUMBER = 9;
-    static final int MIN_NUMBER = 1;
-    static final int LENGTH = 3;
-
-
     public static List<Integer> getBalls() {
         return balls;
     }
 
-    public static void setBalls() {
+    public static void genBalls() {
         balls.clear();
-        while (balls.size() != LENGTH) {
-            int num = random.nextInt(8) + 1;
+        while (balls.size() != Setting.LENGTH) {
+            // (0 ~ 8) +1  -> (1 ~ Setting.Length)
+            int num = Setting.random.nextInt(Setting.MAX_NUMBER - 1) + 1;
             if (!balls.contains(num)) {
                 balls.add(num);
             }

@@ -12,12 +12,12 @@ public class Score {
         strike = 0;
     }
 
-    public boolean threeStrike(int strike) {
+    public static boolean threeStrike() {
         return strike == 3;
     }
 
     public void countBall(ArrayList<Integer> computerBalls, ArrayList<Integer> playerBalls) {
-        for (int i = 0; i < Computer.LENGTH; i++) {
+        for (int i = 0; i < Setting.LENGTH; i++) {
             if (computerBalls.contains(playerBalls.get(i)) && computerBalls.get(i) != playerBalls.get(i)) {
                 ball += 1;
             }
@@ -25,7 +25,7 @@ public class Score {
     }
 
     public void countStrike(ArrayList<Integer> computerBalls, ArrayList<Integer> playerBalls) {
-        for (int i = 0; i < Computer.LENGTH; i++) {
+        for (int i = 0; i < Setting.LENGTH; i++) {
             if (computerBalls.get(i) == playerBalls.get(i)) {
                 strike += 1;
             }
