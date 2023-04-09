@@ -11,14 +11,11 @@ public class InputUtils {
 
     public static boolean isExit(String option) {
         checkRestartOrExit(option);
-        if (option.equals(Setting.CONTINUE)) {
-            return false;
-        }
-        return true;
+        return !option.equals(Setting.CONTINUE);
     }
 
     private static void checkRestartOrExit(String option) {
-        if (option.equals(Setting.CONTINUE) && option.equals(Setting.END)) {
+        if (!option.equals(Setting.CONTINUE) && !option.equals(Setting.END)) {
             throw new IllegalArgumentException();
         }
     }
