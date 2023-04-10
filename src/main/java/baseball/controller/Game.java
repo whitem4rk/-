@@ -8,21 +8,19 @@ import baseball.view.GameView;
 import utils.InputUtils;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Game {
 
     public void start(Scanner scanner) {
-        while (true) {
+        do {
             Score.resetScore();
             Computer.genBalls();
 
             play(scanner);
             GameView.printRestartOrExit();
-            if (InputUtils.isExit(scanner.nextLine())) {
-                break;
-            }
-        }
+        } while (!InputUtils.isExit(scanner.nextLine()));
     }
 
     private static void play(Scanner scanner) {
@@ -37,12 +35,7 @@ public class Game {
     }
 
     private static void compareBalls() {
-        for (int i = 0; i < Setting.LENGTH; i++) {
-            if (Computer.getBalls().get(i) == Player.getBalls().get(i)) {
-                Score.strike += 1;
-            } else if (Computer.getBalls().contains(Player.getBalls().get(i))) {
-                Score.ball += 1;
-            }
-        }
+        Score.countBall(Computer.getBalls(), Player.getBalls());
+        Score.countStrike(Computer.getBalls(), Player.getBalls());
     }
 }

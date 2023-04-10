@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Computer {
 
-    private static List<Integer> balls = new ArrayList<>();
+    private static final List<Integer> balls = new ArrayList<>();
 
     public static List<Integer> getBalls() {
         return balls;

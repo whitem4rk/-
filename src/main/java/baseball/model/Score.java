@@ -1,6 +1,7 @@
 package baseball.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Score {
 
@@ -16,17 +17,17 @@ public class Score {
         return strike == 3;
     }
 
-    public void countBall(ArrayList<Integer> computerBalls, ArrayList<Integer> playerBalls) {
+    public static void countBall(List<Integer> computerBalls, List<Integer> playerBalls) {
         for (int i = 0; i < Setting.LENGTH; i++) {
-            if (computerBalls.contains(playerBalls.get(i)) && computerBalls.get(i) != playerBalls.get(i)) {
+            if (computerBalls.contains(playerBalls.get(i)) && !computerBalls.get(i).equals(playerBalls.get(i))) {
                 ball += 1;
             }
         }
     }
 
-    public void countStrike(ArrayList<Integer> computerBalls, ArrayList<Integer> playerBalls) {
+    public static void countStrike(List<Integer> computerBalls, List<Integer> playerBalls) {
         for (int i = 0; i < Setting.LENGTH; i++) {
-            if (computerBalls.get(i) == playerBalls.get(i)) {
+            if (computerBalls.get(i).equals(playerBalls.get(i))) {
                 strike += 1;
             }
         }
