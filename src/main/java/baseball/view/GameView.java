@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.model.Computer;
 import baseball.model.Score;
 import baseball.model.Setting;
 
