@@ -3,12 +3,9 @@ package baseball.controller;
 import baseball.model.Computer;
 import baseball.model.Player;
 import baseball.model.Score;
-import baseball.model.Setting;
 import baseball.view.GameView;
 import utils.InputUtils;
 
-import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Game {
